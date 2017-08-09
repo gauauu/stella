@@ -910,6 +910,49 @@ void EventHandler::handleEvent(Event::Type event, int state)
       if(!myAllowAllDirectionsFlag && state)
         myEvent.set(Event::JoystickOneLeft, 0);
       break;
+
+
+    case Event::JoystickTwoUp:
+      if(!myAllowAllDirectionsFlag && state)
+        myEvent.set(Event::JoystickTwoDown, 0);
+      break;
+
+    case Event::JoystickTwoDown:
+      if(!myAllowAllDirectionsFlag && state)
+        myEvent.set(Event::JoystickTwoUp, 0);
+      break;
+
+    case Event::JoystickTwoLeft:
+      if(!myAllowAllDirectionsFlag && state)
+        myEvent.set(Event::JoystickTwoRight, 0);
+      break;
+
+    case Event::JoystickTwoRight:
+      if(!myAllowAllDirectionsFlag && state)
+        myEvent.set(Event::JoystickTwoLeft, 0);
+      break;
+
+
+    case Event::JoystickThreeUp:
+      if(!myAllowAllDirectionsFlag && state)
+        myEvent.set(Event::JoystickThreeDown, 0);
+      break;
+
+    case Event::JoystickThreeDown:
+      if(!myAllowAllDirectionsFlag && state)
+        myEvent.set(Event::JoystickThreeUp, 0);
+      break;
+
+    case Event::JoystickThreeLeft:
+      if(!myAllowAllDirectionsFlag && state)
+        myEvent.set(Event::JoystickThreeRight, 0);
+      break;
+
+    case Event::JoystickThreeRight:
+      if(!myAllowAllDirectionsFlag && state)
+        myEvent.set(Event::JoystickThreeLeft, 0);
+      break;
+
     ////////////////////////////////////////////////////////////////////////
 
     case Event::Fry:
@@ -2204,7 +2247,19 @@ EventHandler::ActionList EventHandler::ourEmulActionList[kEmulActionListSize] = 
   { Event::Combo13,             "Combo 13",                    "", false },
   { Event::Combo14,             "Combo 14",                    "", false },
   { Event::Combo15,             "Combo 15",                    "", false },
-  { Event::Combo16,             "Combo 16",                    "", false }
+  { Event::Combo16,             "Combo 16",                    "", false },
+
+  { Event::JoystickTwoUp,      "P2 Joystick Up",              "", true  },
+  { Event::JoystickTwoDown,    "P2 Joystick Down",            "", true  },
+  { Event::JoystickTwoLeft,    "P2 Joystick Left",            "", true  },
+  { Event::JoystickTwoRight,   "P2 Joystick Right",           "", true  },
+  { Event::JoystickTwoFire,    "P2 Joystick Fire",            "", true  },
+
+  { Event::JoystickThreeUp,      "P3 Joystick Up",              "", true  },
+  { Event::JoystickThreeDown,    "P3 Joystick Down",            "", true  },
+  { Event::JoystickThreeLeft,    "P3 Joystick Left",            "", true  },
+  { Event::JoystickThreeRight,   "P3 Joystick Right",           "", true  },
+  { Event::JoystickThreeFire,    "P3 Joystick Fire",            "", true  },
 };
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

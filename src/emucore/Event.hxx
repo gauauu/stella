@@ -77,6 +77,9 @@ class Event
       UIUp, UIDown, UILeft, UIRight, UIHome, UIEnd, UIPgUp, UIPgDown,
       UISelect, UINavPrev, UINavNext, UIOK, UICancel, UIPrevDir,
 
+      JoystickTwoUp,JoystickTwoDown,JoystickTwoLeft,JoystickTwoRight,JoystickTwoFire,
+      JoystickThreeUp,JoystickThreeDown,JoystickThreeLeft,JoystickThreeRight,JoystickThreeFire,
+
       LastType
     };
 
