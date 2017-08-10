@@ -57,10 +57,11 @@ void Quadtari::update()
 
   //First read the writable pins of the right jack,
   //to see which controller we're reading
-  uInt8 swchb = mySystem.m6532().peek(0x0282);
+  uInt8 swcha = mySystem.m6532().peek(0x280);
+  swcha = swcha % 4;
 
   //then read the correct joystick
-  switch (swchb & 0x3) {
+  switch (swcha) {
 
     case 0:
     default:
