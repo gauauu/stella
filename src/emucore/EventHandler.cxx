@@ -2249,17 +2249,17 @@ EventHandler::ActionList EventHandler::ourEmulActionList[kEmulActionListSize] = 
   { Event::Combo15,             "Combo 15",                    "", false },
   { Event::Combo16,             "Combo 16",                    "", false },
 
-  { Event::JoystickTwoUp,      "P2 Joystick Up",              "", true  },
-  { Event::JoystickTwoDown,    "P2 Joystick Down",            "", true  },
-  { Event::JoystickTwoLeft,    "P2 Joystick Left",            "", true  },
-  { Event::JoystickTwoRight,   "P2 Joystick Right",           "", true  },
-  { Event::JoystickTwoFire,    "P2 Joystick Fire",            "", true  },
+  { Event::JoystickTwoUp,       "Quadtari P2 Up",              "", true  },
+  { Event::JoystickTwoDown,     "Quadtari P2 Down",            "", true  },
+  { Event::JoystickTwoLeft,     "Quadtari P2 Left",            "", true  },
+  { Event::JoystickTwoRight,    "Quadtari P2 Right",           "", true  },
+  { Event::JoystickTwoFire,     "Quadtari P2 Fire",            "", true  },
 
-  { Event::JoystickThreeUp,      "P3 Joystick Up",              "", true  },
-  { Event::JoystickThreeDown,    "P3 Joystick Down",            "", true  },
-  { Event::JoystickThreeLeft,    "P3 Joystick Left",            "", true  },
-  { Event::JoystickThreeRight,   "P3 Joystick Right",           "", true  },
-  { Event::JoystickThreeFire,    "P3 Joystick Fire",            "", true  },
+  { Event::JoystickThreeUp,     "Quadtari P3 Up",              "", true  },
+  { Event::JoystickThreeDown,   "Quadtari P3 Down",            "", true  },
+  { Event::JoystickThreeLeft,   "Quadtari P3 Left",            "", true  },
+  { Event::JoystickThreeRight,  "Quadtari P3 Right",           "", true  },
+  { Event::JoystickThreeFire,   "Quadtari P3 Fire",            "", true  },
 };
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -82,6 +82,9 @@ Controller::Controller(Jack jack, const Event& event, const System& system,
     case CompuMate:
       myName = "CompuMate";
       break;
+    case Quadtari:
+      myName = "Quadtari";
+      break;
   }
 }
 

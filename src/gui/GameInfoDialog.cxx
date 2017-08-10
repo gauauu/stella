@@ -199,6 +199,7 @@ GameInfoDialog::GameInfoDialog(
   VarList::push_back(ctrls, "CompuMate",     "COMPUMATE"    );
 //  VarList::push_back(ctrls, "KidVid",        "KIDVID"      );
   VarList::push_back(ctrls, "MindLink",      "MINDLINK"     );
+  VarList::push_back(ctrls, "Quadtari",      "QUADTARI"     );
   myP0Controller = new PopUpWidget(myTab, font, xpos+lwidth, ypos,
                                    pwidth, lineHeight, ctrls, "", 0, 0);
   wid.push_back(myP0Controller);

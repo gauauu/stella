@@ -41,6 +41,7 @@
 #include "Paddles.hxx"
 #include "Props.hxx"
 #include "PropsSet.hxx"
+#include "Quadtari.hxx"
 #include "SaveKey.hxx"
 #include "Settings.hxx"
 #include "Sound.hxx"
@@ -767,7 +768,11 @@ void Console::setControllers(const string& rommd5)
   else if(left == "MINDLINK")
   {
     leftC = make_unique<MindLink>(Controller::Left, myEvent, *mySystem);
-  }
+  } 
+  else if(left == "QUADTARI")
+  {
+    leftC = make_unique<Quadtari>(Controller::Left, myEvent, *mySystem);
+  } 
 
   // Construct right controller
   if(right == "JOYSTICK")
@@ -838,6 +843,10 @@ void Console::setControllers(const string& rommd5)
   {
     rightC = make_unique<MindLink>(Controller::Right, myEvent, *mySystem);
   }
+  else if(right == "QUADTARI")
+  {
+    rightC = make_unique<Quadtari>(Controller::Left, myEvent, *mySystem);
+  } 
 
   // Swap the ports if necessary
   if(myProperties.get(Console_SwapPorts) == "NO")

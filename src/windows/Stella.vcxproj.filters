@@ -552,6 +552,9 @@
     <ClCompile Include="..\emucore\MindLink.cxx">
       <Filter>Source Files\emucore</Filter>
     </ClCompile>
+    <ClCompile Include="..\emucore\Quadtari.cxx">
+      <Filter>Source Files\emucore</Filter>
+    </ClCompile>
     <ClCompile Include="..\emucore\CartCM.cxx">
       <Filter>Source Files\emucore</Filter>
     </ClCompile>
@@ -1368,6 +1371,9 @@
       <Filter>Header Files\emucore</Filter>
     </ClInclude>
     <ClInclude Include="..\emucore\MindLink.hxx">
+      <Filter>Header Files\emucore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\emucore\Quadtari.hxx">
       <Filter>Header Files\emucore</Filter>
     </ClInclude>
     <ClInclude Include="..\emucore\CartCM.hxx">

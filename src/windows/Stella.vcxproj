@@ -313,6 +313,7 @@
     <ClCompile Include="..\emucore\FBSurface.cxx" />
     <ClCompile Include="..\emucore\MindLink.cxx" />
     <ClCompile Include="..\emucore\PointingDevice.cxx" />
+    <ClCompile Include="..\emucore\Quadtari.cxx" />
     <ClCompile Include="..\emucore\TIASurface.cxx" />
     <ClCompile Include="..\emucore\tia\Background.cxx" />
     <ClCompile Include="..\emucore\tia\Ball.cxx" />
@@ -588,6 +589,7 @@
     <ClInclude Include="..\emucore\CompuMate.hxx" />
     <ClInclude Include="..\emucore\FBSurface.hxx" />
     <ClInclude Include="..\emucore\MindLink.hxx" />
+    <ClInclude Include="..\emucore\Quadtari.hxx" />
     <ClInclude Include="..\emucore\PointingDevice.hxx" />
     <ClInclude Include="..\emucore\TIASurface.hxx" />
     <ClInclude Include="..\emucore\tia\Background.hxx" />
