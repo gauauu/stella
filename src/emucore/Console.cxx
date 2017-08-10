@@ -771,7 +771,7 @@ void Console::setControllers(const string& rommd5)
   } 
   else if(left == "QUADTARI")
   {
-    leftC = make_unique<Quadtari>(Controller::Left, myEvent, *mySystem);
+    leftC = make_unique<Quadtari>(Controller::Left, myEvent, *mySystem, *this);
   } 
 
   // Construct right controller
@@ -845,7 +845,7 @@ void Console::setControllers(const string& rommd5)
   }
   else if(right == "QUADTARI")
   {
-    rightC = make_unique<Quadtari>(Controller::Left, myEvent, *mySystem);
+    rightC = make_unique<Quadtari>(Controller::Right, myEvent, *mySystem, *this);
   } 
 
   // Swap the ports if necessary

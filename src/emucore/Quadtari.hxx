@@ -19,6 +19,7 @@
 #define QUADTARI_HXX
 
 #include "bspf.hxx"
+#include "Console.hxx"
 #include "Control.hxx"
 #include "Event.hxx"
 
@@ -40,16 +41,46 @@ class Quadtari : public Controller
       @param event  The event object to use for events
       @param system The system using this controller
     */
-    Quadtari(Jack jack, const Event& event, const System& system);
+    Quadtari(Jack jack, const Event& event, const System& system, const Console& console);
     virtual ~Quadtari() = default;
 
   public:
+
+    /**
+      Write the given value to the specified digital pin for this
+      controller.  Writing is only allowed to the pins associated
+      with the PIA.  Therefore you cannot write to pin six.
+
+      @param pin The pin of the controller jack to write to
+      @param value The value to write to the pin
+    */
+    void write(DigitalPin pin, bool value) override;
+
 
     /**
       Update the entire digital and analog pin state according to the
       events currently set.
     */
     void update() override;
+
+  protected:
+    /**
+     Updates the left-side quadtari with whichever
+     joystick was selected by the right-side
+    */
+    void setSelectedJoystick(uInt8 currentJoystick);
+
+  private:
+
+    /**
+     Updates the pin state based on current event
+     status and the currently selected joystick
+     */
+    void updatePins();
+
+    /// Pointer to the Console (to talk to the other half of the Quadtari)
+    const Console& myConsole;
+    uInt8 myCurrentlySelectedJoystick;
 
 
 

@@ -18,14 +18,60 @@
 #include "Event.hxx"
 #include "Quadtari.hxx"
 #include "System.hxx"
-#include "M6532.hxx"
+
+#include <string>
+#include <iostream>
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Quadtari::Quadtari(Jack jack, const Event& event, const System& system)
-  : Controller(jack, event, system, Controller::Quadtari)
+Quadtari::Quadtari(Jack jack, const Event& event, const System& system, const Console& console)
+  : Controller(jack, event, system, Controller::Quadtari),
+  myConsole(console),
+  myCurrentlySelectedJoystick(0)
 {
-
 }
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+void Quadtari::write(DigitalPin pin, bool value)
+{
+  /*
+   If this is the right port (the port that supports
+   writing for selecting joysticks),
+   set the correct currentlySelectedJoystick by reading
+   the writable pins
+  */
+
+  if (myJack == Right) {
+    if (pin == One) {
+      if (value) {
+        myCurrentlySelectedJoystick = myCurrentlySelectedJoystick | 1;
+      } else {
+        myCurrentlySelectedJoystick = myCurrentlySelectedJoystick & 0xFE;
+      }
+    } else if (pin == Two) {
+      if (value) {
+        myCurrentlySelectedJoystick = myCurrentlySelectedJoystick | 2;
+      } else {
+        myCurrentlySelectedJoystick = myCurrentlySelectedJoystick & 0xFD;
+      }
+    }
+
+    //Now push that information back to the quadtari on the left jack
+    Controller& leftControl = myConsole.leftController();
+    Type leftType = leftControl.type();
+    if (leftType == Controller::Type::Quadtari) {
+      Quadtari& leftQuadtari = static_cast<Quadtari&>(leftControl);
+      leftQuadtari.setSelectedJoystick(myCurrentlySelectedJoystick);
+    }
+  } 
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+void Quadtari::setSelectedJoystick(Uint8 currentJoystick) {
+  myCurrentlySelectedJoystick = currentJoystick;
+  updatePins();
+}
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 void Quadtari::update()
@@ -55,13 +101,12 @@ void Quadtari::update()
 
   //Otherwise, we're on the left jack.
 
-  //First read the writable pins of the right jack,
-  //to see which controller we're reading
-  uInt8 swcha = mySystem.m6532().peek(0x280);
-  swcha = swcha % 4;
+  //Then read the correct joystick
+  updatePins();
+}
 
-  //then read the correct joystick
-  switch (swcha) {
+void Quadtari::updatePins() {
+  switch (myCurrentlySelectedJoystick) {
 
     case 0:
     default:
