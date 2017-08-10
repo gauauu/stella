@@ -15,8 +15,8 @@
 // this file, and for a DISCLAIMER OF ALL WARRANTIES.
 //============================================================================
 
-#ifndef JOYSTICK_HXX
-#define JOYSTICK_HXX
+#ifndef QUADTARI_HXX
+#define QUADTARI_HXX
 
 #include "bspf.hxx"
 #include "Control.hxx"

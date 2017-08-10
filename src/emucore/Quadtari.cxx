@@ -17,11 +17,12 @@
 
 #include "Event.hxx"
 #include "Quadtari.hxx"
+#include "System.hxx"
+#include "M6532.hxx"
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Quadtari::Quadtari(Jack jack, const Event& event, const System& system)
-  : Controller(jack, event, system, Controller::Quadtari),
-    myControlID(-1)
+  : Controller(jack, event, system, Controller::Quadtari)
 {
 
 }
@@ -56,7 +57,7 @@ void Quadtari::update()
 
   //First read the writable pins of the right jack,
   //to see which controller we're reading
-  uInt8 swchb = system.m6532().peek(0x0282);
+  uInt8 swchb = mySystem.m6532().peek(0x0282);
 
   //then read the correct joystick
   switch (swchb & 0x3) {

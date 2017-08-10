@@ -912,45 +912,45 @@ void EventHandler::handleEvent(Event::Type event, int state)
       break;
 
 
-    case Event::JoystickTwoUp:
+    case Event::QuadtariTwoUp:
       if(!myAllowAllDirectionsFlag && state)
-        myEvent.set(Event::JoystickTwoDown, 0);
+        myEvent.set(Event::QuadtariTwoDown, 0);
       break;
 
-    case Event::JoystickTwoDown:
+    case Event::QuadtariTwoDown:
       if(!myAllowAllDirectionsFlag && state)
-        myEvent.set(Event::JoystickTwoUp, 0);
+        myEvent.set(Event::QuadtariTwoUp, 0);
       break;
 
-    case Event::JoystickTwoLeft:
+    case Event::QuadtariTwoLeft:
       if(!myAllowAllDirectionsFlag && state)
-        myEvent.set(Event::JoystickTwoRight, 0);
+        myEvent.set(Event::QuadtariTwoRight, 0);
       break;
 
-    case Event::JoystickTwoRight:
+    case Event::QuadtariTwoRight:
       if(!myAllowAllDirectionsFlag && state)
-        myEvent.set(Event::JoystickTwoLeft, 0);
+        myEvent.set(Event::QuadtariTwoLeft, 0);
       break;
 
 
-    case Event::JoystickThreeUp:
+    case Event::QuadtariThreeUp:
       if(!myAllowAllDirectionsFlag && state)
-        myEvent.set(Event::JoystickThreeDown, 0);
+        myEvent.set(Event::QuadtariThreeDown, 0);
       break;
 
-    case Event::JoystickThreeDown:
+    case Event::QuadtariThreeDown:
       if(!myAllowAllDirectionsFlag && state)
-        myEvent.set(Event::JoystickThreeUp, 0);
+        myEvent.set(Event::QuadtariThreeUp, 0);
       break;
 
-    case Event::JoystickThreeLeft:
+    case Event::QuadtariThreeLeft:
       if(!myAllowAllDirectionsFlag && state)
-        myEvent.set(Event::JoystickThreeRight, 0);
+        myEvent.set(Event::QuadtariThreeRight, 0);
       break;
 
-    case Event::JoystickThreeRight:
+    case Event::QuadtariThreeRight:
       if(!myAllowAllDirectionsFlag && state)
-        myEvent.set(Event::JoystickThreeLeft, 0);
+        myEvent.set(Event::QuadtariThreeLeft, 0);
       break;
 
     ////////////////////////////////////////////////////////////////////////
@@ -2249,17 +2249,17 @@ EventHandler::ActionList EventHandler::ourEmulActionList[kEmulActionListSize] = 
   { Event::Combo15,             "Combo 15",                    "", false },
   { Event::Combo16,             "Combo 16",                    "", false },
 
-  { Event::JoystickTwoUp,       "Quadtari P2 Up",              "", true  },
-  { Event::JoystickTwoDown,     "Quadtari P2 Down",            "", true  },
-  { Event::JoystickTwoLeft,     "Quadtari P2 Left",            "", true  },
-  { Event::JoystickTwoRight,    "Quadtari P2 Right",           "", true  },
-  { Event::JoystickTwoFire,     "Quadtari P2 Fire",            "", true  },
+  { Event::QuadtariTwoUp,       "Quadtari P2 Up",              "", true  },
+  { Event::QuadtariTwoDown,     "Quadtari P2 Down",            "", true  },
+  { Event::QuadtariTwoLeft,     "Quadtari P2 Left",            "", true  },
+  { Event::QuadtariTwoRight,    "Quadtari P2 Right",           "", true  },
+  { Event::QuadtariTwoFire,     "Quadtari P2 Fire",            "", true  },
 
-  { Event::JoystickThreeUp,     "Quadtari P3 Up",              "", true  },
-  { Event::JoystickThreeDown,   "Quadtari P3 Down",            "", true  },
-  { Event::JoystickThreeLeft,   "Quadtari P3 Left",            "", true  },
-  { Event::JoystickThreeRight,  "Quadtari P3 Right",           "", true  },
-  { Event::JoystickThreeFire,   "Quadtari P3 Fire",            "", true  },
+  { Event::QuadtariThreeUp,     "Quadtari P3 Up",              "", true  },
+  { Event::QuadtariThreeDown,   "Quadtari P3 Down",            "", true  },
+  { Event::QuadtariThreeLeft,   "Quadtari P3 Left",            "", true  },
+  { Event::QuadtariThreeRight,  "Quadtari P3 Right",           "", true  },
+  { Event::QuadtariThreeFire,   "Quadtari P3 Fire",            "", true  },
 };
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
